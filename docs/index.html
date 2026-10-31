@@ -31,9 +31,12 @@
     <h1>Run your apps the <span class="accent">native</span> way.</h1>
     <p class="lede">ArmAware finds the apps on your PC that are quietly running under emulation, and shows you where a native ARM64 version exists.</p>
     <div class="actions">
-      <span class="btn btn-primary is-soon" aria-disabled="true">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M1 2.5 7 1.6v5.9H1zm7-1.05L15 .5v7H8zM1 8.5h6v5.9l-6-.9zm7 0h7v7l-7-.95z"/></svg>
-        Microsoft Store <span class="badge">Coming soon</span></span>
+      <a class="store-badge" href="https://apps.microsoft.com/detail/9N84PT3981Z1?mode=direct">
+        <picture>
+          <source media="(prefers-color-scheme: light)" srcset="https://get.microsoft.com/images/en-us%20dark.svg">
+          <img src="https://get.microsoft.com/images/en-us%20light.svg" width="200" height="72" alt="Download from the Microsoft Store">
+        </picture>
+      </a>
       <a class="btn" href="https://github.com/TheSirLan/ArmAware">View on GitHub</a>
     </div>
     <p class="note">Free and <a href="https://github.com/TheSirLan/ArmAware">open source</a>. Windows 11 on ARM64.</p>
@@ -136,7 +139,7 @@
     <span>ArmAware by Joshua Clarke Development. Open source under the MIT license.</span>
     <nav aria-label="Footer">
       <a href="https://github.com/TheSirLan/ArmAware">GitHub</a>
-      <span>Microsoft Store (coming soon)</span>
+      <a href="https://apps.microsoft.com/detail/9N84PT3981Z1">Microsoft Store</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </nav>

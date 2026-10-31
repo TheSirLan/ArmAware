@@ -4,6 +4,15 @@
 
 <p align="center"><strong>Find the apps on your Windows on ARM PC that run under emulation, and switch them to native ARM64.</strong></p>
 
+<p align="center">
+  <a href="https://apps.microsoft.com/detail/9N84PT3981Z1?mode=direct">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://get.microsoft.com/images/en-us%20light.svg">
+      <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" alt="Download from the Microsoft Store">
+    </picture>
+  </a>
+</p>
+
 <p align="center"><a href="https://thesirlan.github.io/ArmAware/">Website</a> · <a href="https://thesirlan.github.io/ArmAware/privacy.html">Privacy</a> · <a href="https://github.com/TheSirLan/ArmAware/issues">Issues</a></p>
 
 <p align="center"><img src="marketing/shots/02-arm64-available.png" width="860" alt="ArmAware showing an x64 app with a native ARM64 version available"></p>
@@ -28,6 +37,10 @@ ArmAware answers that question for the apps you already have.
 - **Broad inventory:** desktop apps from the registry (machine and user, 64-bit and 32-bit views), current-user MSIX and Store packages, and Windows Installer component records.
 - **Offline by default:** online checks are optional and go through Windows Package Manager, with a seven-day local cache.
 - **Native WinUI 3 app** with Mica, light and dark themes, search, filters, a details pane and JSON/CSV export, plus a command-line interface that uses the same scanner.
+
+## Install
+
+Get ArmAware from the [Microsoft Store](https://apps.microsoft.com/detail/9N84PT3981Z1). The Store version is signed and updates automatically.
 
 ## Requirements
 
@@ -95,7 +108,7 @@ Settings and the catalog cache live in `%LOCALAPPDATA%\ArmAware`. Exports contai
 - Managed AnyCPU files are architecture-neutral; mixed-mode managed files stay Unknown.
 - MSIX inventory covers the current user only. No elevation is requested.
 - Winget results depend on Windows Package Manager linking the installed app to its catalog. Apps it does not link stay unresolved, and a missing ARM64 entry does not prove that no ARM64 build exists.
-- Development builds are unsigned, so SmartScreen or App Control may block them.
+- Builds you make from source are unsigned, so SmartScreen or App Control may block them. Use the Store version for a signed install.
 
 ## Contributing
 
