@@ -4,6 +4,8 @@
 
 <p align="center"><strong>Find the apps on your Windows on ARM PC that run under emulation, and switch them to native ARM64.</strong></p>
 
+<p align="center"><a href="https://thesirlan.github.io/ArmAware/">Website</a> · <a href="https://thesirlan.github.io/ArmAware/privacy.html">Privacy</a> · <a href="https://github.com/TheSirLan/ArmAware/issues">Issues</a></p>
+
 <p align="center"><img src="marketing/shots/02-arm64-available.png" width="860" alt="ArmAware showing an x64 app with a native ARM64 version available"></p>
 
 ArmAware is a free, open-source Windows 11 utility for ARM64 PCs. It inventories your installed apps, reads each program file's own headers to see whether it is ARM64, x64, x86 or a hybrid, and tells you when a matching ARM64 build is available. It never runs the files it inspects, and it only changes an app when you ask it to and confirm the exact Winget commands.
@@ -97,7 +99,7 @@ Settings and the catalog cache live in `%LOCALAPPDATA%\ArmAware`. Exports contai
 
 ## Contributing
 
-Bug reports and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first, and when reporting a wrong result, share redacted evidence rather than a full inventory export. See [support](docs/support.html) for what to include.
+Bug reports and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first, and when reporting a wrong result, share redacted evidence rather than a full inventory export. See the [support page](https://thesirlan.github.io/ArmAware/support.html) for what to include. Report security problems privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 
