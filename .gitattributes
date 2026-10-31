@@ -1,0 +1,14 @@
+# Store text with LF in the repository and check it out with CRLF, matching .editorconfig.
+* text=auto eol=crlf
+
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
+*.gif binary
+*.mp4 binary
+*.winmd binary
+*.dll binary
+*.exe binary
+*.msix binary
