@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy | ArmAware</title>
+<meta name="description" content="How ArmAware handles information on your PC.">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="">ArmAware</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="hide-sm" href="index.html#features">Features</a>
+      <a class="hide-sm" href="index.html#screenshots">Screenshots</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <h1>Privacy policy</h1>
+  <p class="meta">Effective 31 October 2026. Publisher: Joshua Clarke Development.</p>
+
+  <div class="summary">
+    <ul>
+      <li>No account, analytics, advertising or telemetry.</li>
+      <li>Scans run on your PC. No inventory report is uploaded.</li>
+      <li>Online checks are optional and go through Windows Package Manager to Microsoft's catalogs.</li>
+      <li>Apps are only installed or removed when you confirm a command.</li>
+    </ul>
+  </div>
+
+  <h2>Local inspection</h2>
+  <p>ArmAware inspects installed application metadata and program files on your Windows PC. It reads uninstall registry entries, current-user package information and executable architecture metadata. It takes a one-off snapshot of running program paths to help identify an application's main executable; it does not continuously monitor processes. It does not read the contents of your personal documents.</p>
+  <p>ArmAware has no account system, analytics, advertising or telemetry backend. It does not upload an inventory report. Local scanning does not require online package checks.</p>
+
+  <h2>Optional external services</h2>
+  <p>When online checks are enabled, Windows Package Manager connects to Microsoft's community Winget and Microsoft Store catalogs. Catalog requests can include package identifiers, versions, package family names, product codes and market information, together with normal network information such as your IP address. Those services operate under their own privacy policies and source agreements. ArmAware does not accept source agreements on your behalf.</p>
+  <p>Opening a manifest link sends a normal browser request to GitHub. The "Search for an ARM64 build" action opens Bing with the application's name as the search query. The App Installer link opens Microsoft Store. The separate command-line manifest diagnostic can also request metadata from GitHub.</p>
+
+  <h2>Settings, cache and diagnostics</h2>
+  <p>Preferences, catalog metadata and startup error details are stored locally in an ArmAware folder in your Windows local app data. The Winget catalog cache expires after seven days. Startup diagnostics can contain file paths and error details; they are never sent to the publisher automatically. Windows can redirect local app data for packaged applications.</p>
+
+  <h2>Exports and support</h2>
+  <p>Reports are saved only when you export them or redirect command-line output. JSON and CSV reports can include application names, versions, publishers, installation paths and package identifiers. Review and redact them before sharing. Files you save outside the application's data folder can remain after uninstalling.</p>
+  <p>If you open a public support issue or send diagnostics, the information you provide is shared with that service and its participants. Do not include passwords, keys, private inventories or unredacted personal paths.</p>
+
+  <h2>Commands that change applications</h2>
+  <p>ArmAware can display or copy installation, removal and update commands. Running a command requires your confirmation and starts a visible terminal. Windows Package Manager and the selected installer may download software, contact their services and change files or settings under their own terms. Back up important data before switching an application.</p>
+
+  <h2>Your choices</h2>
+  <p>You can keep online checks disabled, choose what to export and decline terminal commands. Local preferences and cache can be removed from the app's local data folder while the application is closed. Deleting exported reports, or information you shared with third-party services, is up to you.</p>
+
+  <h2>Questions and changes</h2>
+  <p>Use the <a href="support.html">support page</a> for questions. This page will be updated if ArmAware's data handling changes, with a new effective date.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>ArmAware by Joshua Clarke Development. Open source under the MIT license.</span>
+    <nav aria-label="Footer">
+      <a href="https://apps.microsoft.com/detail/9N84PT3981Z1">Microsoft Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+# Build output
+bin/
+obj/
+artifacts/
+publish/
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.appxupload
+AppPackages/
+BundleArtifacts/
+
+# Local SDK and tool caches
+.dotnet/
+.nuget/
+.tools/
+node_modules/
+
+# IDE and editor state
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+launchSettings.json
+
+# Tests and diagnostics
+TestResults/
+*.trx
+coverage*/
+*.coverage
+*.binlog
+*.log
+*.dmp
+
+# Scan reports and exports (contain installed app lists and local paths)
+scan*.json
+scan*.csv
+artifacts-*.json
+*-scan.json
+
+# Signing material and secrets
+*.pfx
+*.p12
+*.snk
+*.pem
+*.key
+*.cer
+.env
+.env.*
+secrets.json
+
+# Rendered marketing output (regenerate from marketing/video)
+marketing/video/*.mp4
+marketing/video/frames/
+marketing/video/encoder/bin/
+marketing/video/encoder/obj/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local notes and scratch output
+.local/

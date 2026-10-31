@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ArmAware Store slides</title>
+<style>
+  /* Matches the promo video: near-black, hairline borders, muted greys, one restrained accent. */
+  :root { --bg: #08090a; --surface: #101113; --line: rgba(255,255,255,.08); --ink: #f7f8f8; --muted: #8a8f98; --accent: #7db7ff; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+  body { font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+  .bg { position: absolute; inset: 0; background: radial-gradient(1200px 560px at 70% -12%, rgba(255,255,255,.07), transparent 70%), var(--bg); }
+  .grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+          background-size: 80px 80px; opacity: .3; -webkit-mask-image: radial-gradient(1000px 700px at 70% 40%, #000 0%, transparent 75%); }
+  .slide { position: absolute; inset: 0; display: none; }
+  .slide.on { display: block; }
+  .copy { position: absolute; left: 120px; top: 0; bottom: 0; width: 620px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 28px; font-weight: 600; }
+  .brand img { width: 48px; height: 48px; }
+  .eyebrow { font-family: "Cascadia Mono", Consolas, monospace; font-size: 22px; color: var(--muted); }
+  h1 { font-size: 82px; line-height: 1.03; font-weight: 600; letter-spacing: -0.03em; }
+  .accent { color: var(--accent); }
+  p { font-size: 30px; line-height: 1.45; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 10px; font-size: 22px; font-weight: 500; background: var(--surface); border: 1px solid var(--line); }
+  .chip .dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+  .shot { position: absolute; border-radius: 14px; overflow: hidden; box-shadow: 0 60px 160px rgba(0,0,0,.8), 0 0 0 1px var(--line); background: #1c1c1c; }
+  .shot::after { content: ""; position: absolute; inset: 0; border-radius: 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.08); pointer-events: none; }
+  .shot img { display: block; width: 100%; }
+  .crop img { position: absolute; width: auto; }
+  .list { display: flex; flex-direction: column; gap: 28px; }
+  .row { display: flex; gap: 22px; align-items: center; font-size: 32px; font-weight: 500; }
+  .tick { width: 60px; height: 60px; flex: none; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; color: var(--accent); font-size: 30px; }
+  .row small { display: block; font-size: 24px; font-weight: 400; color: var(--muted); margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="grid"></div>
+
+<!-- 1. Hero -->
+<section class="slide" id="s1">
+  <div class="copy">
+    <div class="brand"><img src="../../assets/branding/armaware-icon.png" alt="">ArmAware</div>
+    <div class="eyebrow">for Windows on Arm</div>
+    <h1>Run your apps the <span class="accent">native</span> way.</h1>
+    <p>ArmAware finds apps quietly running under emulation and shows you where a native ARM64 version exists.</p>
+    <div class="chips"><span class="chip">Native WinUI app</span><span class="chip">Runs on your PC</span><span class="chip">Open source</span></div>
+  </div>
+  <div class="shot" style="left: 830px; top: 200px; width: 1000px; transform: perspective(2400px) rotateY(-10deg);"><img src="../shots/02-arm64-available.png" alt=""></div>
+</section>
+
+<!-- 2. Statuses -->
+<section class="slide" id="s2">
+  <div class="copy">
+    <div class="eyebrow">// every app, one clear answer</div>
+    <h1>See what really runs <span class="accent">natively</span>.</h1>
+    <p>Each app gets a clear status: native, emulated, mixed, or an ARM64 version you can switch to.</p>
+    <div class="chips">
+      <span class="chip" style="color: #6ccb5f"><i class="dot"></i>Native ARM64</span><span class="chip" style="color: var(--accent)"><i class="dot"></i>ARM64 available</span>
+      <span class="chip" style="color: #d9a441"><i class="dot"></i>Emulated</span><span class="chip" style="color: #b49cf0"><i class="dot"></i>Mixed</span>
+    </div>
+  </div>
+  <div class="shot" style="left: 820px; top: 150px; width: 1040px;"><img src="../shots/02-arm64-available.png" alt=""></div>
+</section>
+
+<!-- 3. Switch: the app's two step boxes, zoomed in -->
+<section class="slide" id="s3">
+  <div class="copy">
+    <div class="eyebrow">// emulated → native</div>
+    <h1>Switch to ARM64 in <span class="accent">two steps</span>.</h1>
+    <p>Copy the Winget commands, or run them in Terminal after a clear confirmation. Nothing changes until you say so.</p>
+  </div>
+  <div class="shot crop" style="left: 820px; top: 230px; width: 1040px; height: 600px;"><img src="../shots/02-arm64-available.png" style="height: 1620px; left: -1745px; top: -810px;" alt=""></div>
+</section>
+
+<!-- 4. Updates -->
+<section class="slide" id="s4">
+  <div class="copy">
+    <div class="eyebrow">// bonus</div>
+    <h1>Spot <span class="accent">Winget updates</span> too.</h1>
+    <p>Apps with a newer version in the Winget catalog are flagged, with the upgrade command ready to copy or run.</p>
+    <div class="chips"><span class="chip">Powered by Windows Package Manager</span></div>
+  </div>
+  <div class="shot" style="left: 820px; top: 150px; width: 1040px;"><img src="../shots/04-update-available.png" alt=""></div>
+</section>
+
+<!-- 5. Evidence -->
+<section class="slide" id="s5">
+  <div class="copy">
+    <div class="eyebrow">// evidence, not guesses</div>
+    <h1>Know exactly what's <span class="accent">emulated</span>.</h1>
+    <p>ArmAware reads each app's own program files, so the answer comes from the app itself. When it can't be sure, it says so.</p>
+  </div>
+  <div class="shot" style="left: 820px; top: 150px; width: 1040px;"><img src="../shots/05-emulated.png" alt=""></div>
+</section>
+
+<!-- 6. Privacy -->
+<section class="slide" id="s6">
+  <div class="copy">
+    <div class="eyebrow">// private by design</div>
+    <h1>Your apps stay <span class="accent">your business</span>.</h1>
+    <div class="list">
+      <div class="row"><div class="tick">✓</div><div>Runs on your PC<small>Program files are read locally.</small></div></div>
+      <div class="row"><div class="tick">✓</div><div>No account. No telemetry.<small>Nothing changes unless you run a command.</small></div></div>
+      <div class="row"><div class="tick">✓</div><div>Optional online checks<small>Only package IDs and versions go to Microsoft's catalogs.</small></div></div>
+    </div>
+  </div>
+  <div class="shot" style="left: 880px; top: 190px; width: 1000px; transform: perspective(2400px) rotateY(-10deg);"><img src="../shots/01-welcome.png" alt=""></div>
+</section>
+
+<script>
+  const n = (location.hash || '#1').slice(1);
+  document.getElementById('s' + n).classList.add('on');
+</script>
+</body>
+</html>

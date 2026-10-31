@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0-windows10.0.26100.0</TargetFramework><SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion><MicrosoftManagementDeployment-Platform>arm64</MicrosoftManagementDeployment-Platform></PropertyGroup><ItemGroup><ProjectReference Include="../ArmAware.Core/ArmAware.Core.csproj" /><PackageReference Include="Microsoft.WindowsPackageManager.ComInterop" Version="1.29.380" /></ItemGroup><ItemGroup><Content Include="$(NuGetPackageRoot)microsoft.windowspackagemanager.cominterop/1.29.380/bin/win-arm64/native/static/Microsoft.Management.Deployment.dll" Link="Microsoft.Management.Deployment.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /><!-- Without the winmd beside the exe, WinRT falls back to system activation, which needs package identity (0x80073D54) in an unpackaged app. --><Content Include="$(NuGetPackageRoot)microsoft.windowspackagemanager.cominterop/1.29.380/lib/uap10.0/Microsoft.Management.Deployment.winmd" Link="Microsoft.Management.Deployment.winmd" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup></Project>
+
+
+
+
+
+

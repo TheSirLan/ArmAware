@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ArmAware.App/ArmAware.App.csproj">
+      <Platform Project="ARM64" />
+    </Project>
+    <Project Path="src/ArmAware.Cli/ArmAware.Cli.csproj" />
+    <Project Path="src/ArmAware.Core/ArmAware.Core.csproj" />
+    <Project Path="src/ArmAware.Windows/ArmAware.Windows.csproj" />
+    <Project Path="src/ArmAware.Winget/ArmAware.Winget.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ArmAware.Tests/ArmAware.Tests.csproj" />
+  </Folder>
+</Solution>

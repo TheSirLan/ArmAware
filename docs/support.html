@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support | ArmAware</title>
+<meta name="description" content="Get help with ArmAware and report problems.">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="">ArmAware</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="hide-sm" href="index.html#features">Features</a>
+      <a class="hide-sm" href="index.html#screenshots">Screenshots</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html" aria-current="page">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <h1>Support</h1>
+  <p class="meta">ArmAware is developed by Joshua Clarke Development.</p>
+
+  <div class="summary">
+    <p style="margin:0">To report a problem or suggest an improvement, open an issue on the public ArmAware repository, or use the support contact in the Microsoft Store listing.</p>
+  </div>
+
+  <h2>What to include</h2>
+  <ul>
+    <li>ArmAware version, Windows version and device.</li>
+    <li>The affected application's name and version.</li>
+    <li>What you expected, what happened and how to reproduce it.</li>
+    <li>The evidence and any warning text ArmAware showed, with private paths redacted.</li>
+  </ul>
+  <p>Please do not upload your complete application inventory. Check screenshots and diagnostics for personal information and file paths before sharing them publicly.</p>
+
+  <h2>Unknown or inferred results</h2>
+  <p>Unknown means the evidence was not strong enough to decide. When several program files agree, ArmAware may show an inferred result with medium confidence. Results describe the inspected files; they do not prove that every dependency or process is native.</p>
+
+  <h2>Online check problems</h2>
+  <p>A catalog failure leaves the rest of the scan available. Check that <a href="https://apps.microsoft.com/detail/9NBLGGH4NNS1">App Installer</a> (Windows Package Manager) is installed and up to date, and that your network and source settings allow access. ArmAware never accepts source agreements for you; run <code>winget list</code> once in a terminal to review them.</p>
+
+  <h2>Switching an application</h2>
+  <p>Close the application and back up settings and important data first. Review the exact package, version and scope. Uninstalling can remove data. If removal fails, the combined script stops before installing. If the ARM64 installation fails after removal, reinstall the original application from its trusted installer before trying again.</p>
+
+  <p>The publisher does not receive scan data. See the <a href="privacy.html">privacy policy</a> for details.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>ArmAware by Joshua Clarke Development. Open source under the MIT license.</span>
+    <nav aria-label="Footer">
+      <a href="https://apps.microsoft.com/detail/9N84PT3981Z1">Microsoft Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

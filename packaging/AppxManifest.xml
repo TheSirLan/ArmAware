@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         IgnorableNamespaces="uap uap10 rescap">
+  <Identity Name="JoshuaClarkeDevelopment.ArmAware" Publisher="CN=90CEA9B2-A97C-4061-82A2-FD188C5281A4" Version="1.0.1.0" ProcessorArchitecture="arm64" />
+  <Properties>
+    <DisplayName>ArmAware</DisplayName>
+    <PublisherDisplayName>Joshua Clarke Development</PublisherDisplayName>
+    <Description>Inspect installed Windows applications for native ARM64 support.</Description>
+    <Logo>PackageAssets\StoreLogo.png</Logo>
+  </Properties>
+  <Resources><Resource Language="en-US" /></Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22000.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+  <Applications>
+    <Application Id="App" Executable="ArmAware.App.exe" uap10:RuntimeBehavior="packagedClassicApp" uap10:TrustLevel="mediumIL">
+      <uap:VisualElements DisplayName="ArmAware" Description="Inspect installed Windows applications for native ARM64 support."
+                          Square150x150Logo="PackageAssets\Square150x150Logo.png"
+                          Square44x44Logo="PackageAssets\Square44x44Logo.png" BackgroundColor="transparent" />
+    </Application>
+  </Applications>
+  <Capabilities><rescap:Capability Name="runFullTrust" /></Capabilities>
+</Package>

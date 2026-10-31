@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <Version>1.0.1</Version>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
+    <UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <SelfContained>true</SelfContained>
+    <Platforms>ARM64</Platforms>
+    <Platform Condition="'$(Platform)' == '' Or '$(Platform)' == 'AnyCPU'">ARM64</Platform>
+    <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.6.4" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+    <ProjectReference Include="../ArmAware.Windows/ArmAware.Windows.csproj" />
+    <ProjectReference Include="../ArmAware.Winget/ArmAware.Winget.csproj" />
+    <Compile Include="../ArmAware.Cli/Composition.cs" Link="Integration/Composition.cs" />
+    <Content Include="Assets\AppIcon.ico;Assets\AppLogo.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\Art\*.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <!-- The WinUI build generates these resources, but this SDK does not add them to dotnet publish. -->
+  <Target Name="PublishCompiledXamlResources" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <_WinUiPublishedResource Include="$(TargetDir)**\*.xbf" />
+      <ResolvedFileToPublish Include="@(_WinUiPublishedResource)"
+        RelativePath="%(_WinUiPublishedResource.RecursiveDir)%(_WinUiPublishedResource.Filename)%(_WinUiPublishedResource.Extension)"
+        CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+      <ResolvedFileToPublish Include="$(TargetDir)$(AssemblyName).pri">
+        <RelativePath>$(AssemblyName).pri</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+  <Target Name="VerifyPublishedXamlResources" AfterTargets="Publish">
+    <Error Condition="!Exists('$(PublishDir)$(AssemblyName).pri') Or !Exists('$(PublishDir)App.xbf') Or !Exists('$(PublishDir)MainWindow.xbf')"
+           Text="Published WinUI XAML resources are missing. The application cannot start without its PRI and XBF files." />
+  </Target>
+</Project>

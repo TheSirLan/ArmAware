@@ -1,0 +1,50 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      packageVersion:
+        description: 'MSIX version (major.minor.build.0)'
+        required: true
+        default: '1.0.1.0'
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Restore
+        run: dotnet restore ArmAware.slnx
+      - name: Build solution
+        run: dotnet build ArmAware.slnx -c Release --no-restore
+      - name: Tests
+        run: dotnet test tests/ArmAware.Tests -c Release --no-restore --logger trx
+      - name: Formatting
+        run: dotnet format whitespace ArmAware.slnx --verify-no-changes --no-restore
+      - name: Publish desktop
+        run: dotnet publish src/ArmAware.App -c Release -p:Platform=ARM64 -r win-arm64 --self-contained true -o artifacts/desktop-win-arm64
+      - name: Publish CLI
+        run: dotnet publish src/ArmAware.Cli -c Release -r win-arm64 --self-contained true -o artifacts/cli-win-arm64
+      - name: Build validated ARM64 Store MSIX (unsigned)
+        shell: pwsh
+        env:
+          PACKAGE_VERSION: ${{ inputs.packageVersion || '1.0.1.0' }}
+        run: ./scripts/Build-Msix.ps1 -Version $env:PACKAGE_VERSION
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ArmAware-Store-arm64-unsigned
+          path: artifacts/msix/**/*.msix
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ArmAware-development-win-arm64
+          path: artifacts/
+          if-no-files-found: error
+

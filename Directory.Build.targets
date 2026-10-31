@@ -1,0 +1,7 @@
+<Project>
+  <Target Name="ValidateArmAwareArchitecture" BeforeTargets="PrepareForBuild"
+          Condition="'$(MSBuildProjectName)' == 'ArmAware.App' Or '$(MSBuildProjectName)' == 'ArmAware.Cli'">
+    <Error Condition="'$(RuntimeIdentifier)' != 'win-arm64' Or '$(PlatformTarget)' != 'ARM64' Or '$(Platform)' == 'x64'"
+           Text="ArmAware supports ARM64 builds only. Use win-arm64 and PlatformTarget=ARM64." />
+  </Target>
+</Project>

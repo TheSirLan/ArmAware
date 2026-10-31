@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArmAware: find emulated apps on Windows on ARM</title>
+<meta name="description" content="ArmAware shows which apps on your Windows on ARM PC run under emulation, and helps you switch them to native ARM64 builds.">
+<meta property="og:title" content="ArmAware">
+<meta property="og:description" content="Find the apps on your Windows on ARM PC that run under emulation, and switch them to native ARM64.">
+<meta property="og:image" content="img/02-arm64-available.png">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="">ArmAware</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#screenshots">Screenshots</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">for Windows on Arm</p>
+    <h1>Run your apps the <span class="accent">native</span> way.</h1>
+    <p class="lede">ArmAware finds the apps on your PC that are quietly running under emulation, and shows you where a native ARM64 version exists.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9N84PT3981Z1">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M1 2.5 7 1.6v5.9H1zm7-1.05L15 .5v7H8zM1 8.5h6v5.9l-6-.9zm7 0h7v7l-7-.95z"/></svg>
+        Get it from Microsoft Store</a>
+      <a class="btn" href="#screenshots">See screenshots</a>
+    </div>
+    <p class="note">Free and open source. Windows 11 on ARM64.</p>
+    <div class="shot hero-shot"><img src="img/02-arm64-available.png" width="1600" height="900" alt="ArmAware listing installed apps, with VLC media player selected and an ARM64 version available"></div>
+  </div>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The wrong build is easy to install.</h2>
+        <p>Many download pages see Windows but not your processor, so the big download button hands you the x64 installer. Windows runs it through emulation and it mostly just works, so nothing tells you. The cost is hidden: emulated apps can use more battery and feel slower than their native builds.</p>
+      </div>
+      <div class="statuses" aria-label="Statuses ArmAware reports">
+        <span class="chip" style="color: var(--native)">Native ARM64</span>
+        <span class="chip" style="color: var(--accent)">ARM64 available</span>
+        <span class="chip" style="color: var(--emulated)">Emulated</span>
+        <span class="chip" style="color: #b49cf0">Mixed / hybrid</span>
+        <span class="chip" style="color: var(--muted)">Unknown</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Evidence, not guesses.</h2>
+        <p>ArmAware reads each app's own program files, so the answer comes from the app itself. When it cannot be sure, it says so.</p>
+      </div>
+      <div class="features">
+        <div class="card"><img src="img/feature-inspect.png" alt=""><h3>Reads the real files</h3><p>Checks the headers of each program file to see whether it is ARM64, x64, x86 or a hybrid. Files are never loaded or run.</p></div>
+        <div class="card"><img src="img/feature-find.png" alt=""><h3>Finds ARM64 builds</h3><p>Uses Windows Package Manager to find a same-version ARM64 installer, and flags apps with a newer version available.</p></div>
+        <div class="card"><img src="img/feature-control.png" alt=""><h3>You stay in control</h3><p>Copy the Winget commands, or run them in a visible terminal after a clear confirmation. Nothing changes until you say so.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="switch">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Switch to ARM64 in two steps.</h2>
+        <p>For an emulated app with a matching ARM64 installer, ArmAware gives you the exact commands for the version and scope you have installed.</p>
+      </div>
+      <div class="terminal" role="img" aria-label="Two Winget commands: uninstall the x64 build of VLC, then install the ARM64 build">
+        <div class="c"># 1. Remove the x64 version</div>
+        <div><span class="p">&gt;</span> winget uninstall --exact --id VideoLAN.VLC --source winget</div>
+        <div class="c"># 2. Install the ARM64 version</div>
+        <div><span class="p">&gt;</span> winget install --exact --id VideoLAN.VLC --architecture arm64 --version 3.0.24 --source winget</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>A native Windows 11 app.</h2>
+        <p>Built with WinUI 3, with Mica, light and dark themes and full keyboard support.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <figcaption><h3>Every app, one clear answer</h3><p>The status cards filter the list. Select an app to see why it got its status and what you can do about it.</p></figcaption>
+          <a class="shot" href="img/02-arm64-available.png"><img src="img/02-arm64-available.png" width="1600" height="900" loading="lazy" alt="App list with status cards and the details pane for VLC media player"></a>
+        </figure>
+        <figure>
+          <figcaption><h3>See what is emulated</h3><p>The evidence shows exactly which program files were inspected and what they are built for.</p></figcaption>
+          <a class="shot" href="img/05-emulated.png"><img src="img/05-emulated.png" width="1600" height="900" loading="lazy" alt="An emulated app selected, with its executable evidence"></a>
+        </figure>
+        <figure>
+          <figcaption><h3>Confirm before anything runs</h3><p>Run in Terminal shows the full script first, then runs it where you can watch every step.</p></figcaption>
+          <a class="shot" href="img/03-run-confirmation.png"><img src="img/03-run-confirmation.png" width="1600" height="900" loading="lazy" alt="Confirmation dialog showing the commands that will run"></a>
+        </figure>
+        <figure>
+          <figcaption><h3>Spot Winget updates too</h3><p>Apps with a newer version in the Winget catalog are flagged, with the upgrade command ready to copy or run.</p></figcaption>
+          <a class="shot" href="img/04-update-available.png"><img src="img/04-update-available.png" width="1600" height="900" loading="lazy" alt="An app with a Winget update available"></a>
+        </figure>
+        <figure>
+          <figcaption><h3>A friendly start</h3><p>The welcome screen explains what ArmAware does and checks that Windows Package Manager is ready.</p></figcaption>
+          <a class="shot" href="img/01-welcome.png"><img src="img/01-welcome.png" width="1600" height="900" loading="lazy" alt="ArmAware welcome screen"></a>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Your apps stay your business.</h2>
+        <p>No account, no telemetry, no backend. Read the full <a href="privacy.html">privacy policy</a>.</p>
+      </div>
+      <div class="privacy-points">
+        <div class="card"><h3>Runs on your PC</h3><p>Scans are local and offline by default. No inventory is ever uploaded.</p></div>
+        <div class="card"><h3>Optional online checks</h3><p>Off unless you turn them on. Windows Package Manager then asks Microsoft's Winget and Store catalogs about the packages you have installed.</p></div>
+        <div class="card"><h3>Nothing changes by itself</h3><p>Apps are only installed or removed when you confirm a command.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>ArmAware by Joshua Clarke Development. Open source under the MIT license.</span>
+    <nav aria-label="Footer">
+      <a href="https://apps.microsoft.com/detail/9N84PT3981Z1">Microsoft Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
