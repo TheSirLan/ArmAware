@@ -42,9 +42,5 @@ jobs:
           name: ArmAware-Store-arm64-unsigned
           path: artifacts/msix/**/*.msix
           if-no-files-found: error
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ArmAware-development-win-arm64
-          path: artifacts/
-          if-no-files-found: error
+          retention-days: 7
 
