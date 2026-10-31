@@ -378,7 +378,7 @@
     <Border Padding="16,14" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1">
      <StackPanel Spacing="6">
       <TextBlock Text="Also check online for ARM64 versions?" Style="{StaticResource BodyStrongTextBlockStyle}"/>
-      <TextBlock TextWrapping="Wrap" Style="{StaticResource FieldLabelStyle}" Text="Without this, ArmAware can show what is emulated but cannot find ARM64 builds to switch to. Checking online uses Windows Package Manager, which sends package IDs and versions to Microsoft's winget and Store catalogs. Your app list is not uploaded."/>
+      <TextBlock TextWrapping="Wrap" Style="{StaticResource FieldLabelStyle}" Text="Without this, ArmAware can show what is emulated but cannot find ARM64 builds to switch to. Checking online uses Windows Package Manager, which sends package metadata such as IDs, versions and product codes to Microsoft's winget and Store catalogs. Your app list is not uploaded."/>
       <StackPanel Orientation="Horizontal" Spacing="8" Visibility="{x:Bind ViewModel.WingetChecking, Mode=OneWay}" Margin="0,4,0,0">
        <ProgressRing IsActive="{x:Bind ViewModel.WingetChecking, Mode=OneWay}" Width="14" Height="14"/>
        <TextBlock Text="Checking for Windows Package Manager…" Style="{StaticResource FieldLabelStyle}"/>
