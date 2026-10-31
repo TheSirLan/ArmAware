@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ArmAware social preview</title>
+<style>
+  :root { --bg: #08090a; --surface: #101113; --line: rgba(255,255,255,.08); --ink: #f7f8f8; --muted: #8a8f98; --accent: #7db7ff; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; background: var(--bg); }
+  body { font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; color: var(--ink); position: relative; }
+  .bg { position: absolute; inset: 0; background: radial-gradient(900px 420px at 78% -10%, rgba(255,255,255,.08), transparent 70%), var(--bg); }
+  .grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+          background-size: 64px 64px; opacity: .35; -webkit-mask-image: radial-gradient(760px 520px at 78% 40%, #000 0%, transparent 75%); }
+  .copy { position: absolute; left: 80px; top: 0; bottom: 0; width: 520px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 600; }
+  .brand img { width: 52px; height: 52px; }
+  h1 { font-size: 58px; line-height: 1.04; font-weight: 600; letter-spacing: -0.03em; }
+  .accent { color: var(--accent); }
+  p { font-size: 22px; line-height: 1.45; color: var(--muted); }
+  .eyebrow { font-family: "Cascadia Mono", Consolas, monospace; font-size: 17px; color: var(--muted); }
+  .shot { position: absolute; left: 650px; top: 110px; width: 760px; border-radius: 12px; overflow: hidden;
+          box-shadow: 0 50px 140px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.12); transform: perspective(2200px) rotateY(-12deg); transform-origin: left center; }
+  .shot img { display: block; width: 100%; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="grid"></div>
+<div class="copy">
+  <div class="brand"><img src="../../assets/branding/armaware-icon.png" alt="">ArmAware</div>
+  <h1>Run your apps the <span class="accent">native</span> way.</h1>
+  <p>Find the apps on your Windows on ARM PC that run under emulation, and switch them to native ARM64.</p>
+  <div class="eyebrow">free · open source · Windows 11 on Arm</div>
+</div>
+<div class="shot"><img src="../shots/02-arm64-available.png" alt=""></div>
+</body>
+</html>
